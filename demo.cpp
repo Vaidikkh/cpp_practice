@@ -177,7 +177,7 @@ int main() {
 
     //fractional numbers
      
-    double number10{5.6}; 
+/*    double number10{5.6}; 
     double number11{};
     double number12{};
     float number13{30.34232445345430f};
@@ -216,15 +216,107 @@ int main() {
     // gives infinity because of division by zero
     cout << number21 <<"/" <<number22 <<"=" <<result <<endl;
     cout <<result <<"+"<<number21 <<"=" <<result + number21 <<endl; // gives infinity because of addition with infinity
+*/    
     
+    //Boolean 
+/*     bool red_light{true};
+     bool green_light{false};
+     
+     if (red_light == true) {
+        cout<<"STOP!" <<endl;
+     }
+     else {
+        cout<<"GO!" <<endl;
+     }
+    if (green_light) {
+        cout<<"Light is green" <<endl;
+     }
+     else {
+        cout<<"the light is not green" <<endl;
+     }
+    
+    cout << "size of (bool):" <<sizeof(bool)<<endl;
+    // printing boolean values
+    //1 = true and 0 = false
+    cout <<endl;
+        cout<<"red_light:" <<red_light <<endl;
+        cout<<"green_light:" <<green_light <<endl;
+    cout <<boolalpha; // to print boolean values as true and false instead of 1 and 0
+    cout<<"red_light:" <<red_light <<endl;
+    cout<<"green_light:" <<green_light <<endl;
+*/  
+    // character
+/*    char character1 {'A'};
+    char character2 {'B'}; 
+    char character3 {'C'};
+    char character4 {'D'};
+    char character5 {'E'};
+    cout<<"character1:" <<character1 <<endl;
+    cout<<"character2:" <<character2 <<endl;
+    cout<<"character3:" <<character3 <<endl;
+    cout<<"character4:" <<character4 <<endl;
+    cout<<"character5:" <<character5 <<endl;
+ 
+    char value = 69; // ASCII value of 'E'
+    cout<<"value:" <<value <<endl;
+    cout<<"size of char:" <<sizeof(char)<<endl;
+*/
+    // auto
+/*    auto var1 = 42; // type is deduced as int
+    auto var2 = 3.14; // type is deduced as double
+    auto var3 = 'A'; // type is deduced as char
+    auto var4 {10.50l}; // type is deduced as long double
+    auto var5 {12.40f}; // type is deduced as float
+
+    auto var6 {123u}; // type is deduced as signed int
+    auto var7 {123UL}; // type is deduced as unsigned long
+    auto var8 {123LL}; // type is deduced as long long
+
+    cout <<"var1 occupies:" <<sizeof(var1) << "bytes and value is :" <<var1 <<endl;
+    cout <<"var2 occupies:" <<sizeof(var2) << "bytes and value is :" <<var2 <<endl;
+    cout <<"var3 occupies:" <<sizeof(var3) << "bytes and value is :" <<var3 <<endl;
+    cout <<"var4 occupies:" <<sizeof(var4) << "bytes and value is :" <<var4 <<endl;
+    cout <<"var5 occupies:" <<sizeof(var5) << "bytes and value is :" <<var5 <<endl;
+    cout <<"var6 occupies:" <<sizeof(var6) << "bytes and value is :" <<var6 <<endl;
+    cout <<"var7 occupies:" <<sizeof(var7) << "bytes and value is :" <<var7 <<endl;
+    cout <<"var8 occupies:" <<sizeof(var8) << "bytes and value is :" <<var8 <<endl;
+*/  
+    // assignment
+/*   int varr1{123};
+    cout<<"varr1:" <<varr1 <<endl;
+    varr1 = 456; // reassigning a new value to varr1
+    cout<<"varr1 after reassignment:" <<varr1 <<endl;
+    cout<<"---------------------------------" <<endl;
+    auto varr2{343.64};
+    cout<<"varr2:" <<varr2 <<endl;
+    varr2 = 567.89; // reassigning a new value to var  
+    cout<<"varr2 after reassignment:" <<varr2 <<endl;
+    cout<<endl;
+
+    bool state{false};
+    cout<<boolalpha; // to print boolean values as true and false instead of 1 and 0
+    cout<<"state:" <<state <<endl;
+    state = true; // reassigning a new value to state
+    cout<<"state after reassignment:" <<state <<endl;
+     
+    // auto type deduction with assignment
+    auto varr3{123u}; // varr3 is deduced as unsigned int
+    cout<<"varr3:" <<varr3 <<endl;
+    varr3 = -45; // reassigning negative number . DANGER : this will give garbage value because varr3 is unsigned int and cannot hold negative values
+    cout<<"varr3 after reassignment:" <<varr3 <<endl; 
+*/ 
     
 
-    
-    
-    
-    
-    
-    return 0;
+
+
+
+
+
+
+
+
+
+return 0;
   
   
 
