@@ -6,7 +6,7 @@ using namespace std;
         return a+b;
     }
 
-int main() {
+int main(int argc , char **argv) {
     // declaring pointer
 
 
@@ -160,7 +160,7 @@ int main() {
     // it is really bad to call delete twice on a pointer
     
 */  
-    //Dangling Pointers // they are really bad 
+/*    //Dangling Pointers // they are really bad 
                         //uninitialized pointer
                         // deleted pointer
                         // multiple pointer pointing at same memory
@@ -229,6 +229,7 @@ int main() {
         cerr<<"Warning: trying to use abn invalid pointer"<<endl;
     }
 
+*/
     // when "new " fails
     //int *lot_of_int1 { new int [65456456435000101010101010]}; //error array is too long
 
@@ -236,23 +237,80 @@ int main() {
         int * lots_of_int2{new int[10101010]};
     }*/
 
-    for (size_t i{}; i <1100010010;i++){
+    /*for (size_t i{}; i <1100010010;i++){     // error crash program
         try{
             int * lots_of_int3{new int[10101010]};
         }catch(std::exception& ex){
             cout<<"cought exception ourselves:"<<ex.what()<<endl;
         }
 
+    }*/
+/*   for (size_t i{}; i<20987645345678;++i){
+        int*lots_of_ints4 {new (std::nothrow) int[10000000]};
+        if(lots_of_ints4==nullptr) {
+            //dont try to derefering and use lots _of_ints4 in here
+            // you'll get UB, no memory has really been allocated here
+            // If failed and returned nullptr because of the std:: no throw setting
+            cout<<"Memory allocated failed"<<endl;
+        }else {
+            cout<<"Memory allocation suceeded"<<endl;
+        }
+
+   }
+*/ 
+    // Memory Leaks
+/*    int *p_number {new int {45}}; //points to same address , lets call that address 1
+    // should delete and reset
+    cout<<"*p_number"<<*p_number<<endl;
+    int number{44};
+    p_number = &number; //now p_number points to address2, but address1 is still in use by 
+                        //our program . But our program has lost access to the memory location.
+                        //Memory has been leaked
+    cout<<"*p_number"<<*p_number<<endl;
+    
+    int *p_number1 {new int {455}};
+    // USE THE POINTER
+    // Should delete and reset here
+    cout<<"*p_number1"<<*p_number1<<endl;
+
+    p_number1 = new int {563}; //memory with int {455} leakeed
+    cout<<"*p_number1"<<*p_number1<<endl;
+*/
+   /* {
+        int *p_number2 {new int {54}};
+        // use the dynamic memory
+      }
+    // Memory with int{54}   leaked
+    */
+    //Dynamic Array
+    size_t size {10};
+
+    double *p_salaries {new double [size]};
+    int *p_students {new(std::nothrow) int [size]{}};
+    double *p_score { new (std::nothrow) double[size]{1,2,3,4,5}};
+    
+    if(p_score) {
+        for (size_t i{}; i<size;++i){
+            cout<<"value:"<<p_score[i]<<":"<<*(p_score +i)<<endl;
+        }
     }
+    delete[] p_score;
+    delete[] p_students;
+    delete[] p_salaries;
 
-
+    double *temperatures = new double[size] {10.0,20.0,30.0,40.0,50.0,60.0,};
+ 
+    for (double temp :temperatures) {
+        cout<<"tempratures"<<temp<<endl;
+    }
+    
       
     
     
     
     
 
-
+    cout<<"Program ending well"<<endl;
     return 0;
 
     
