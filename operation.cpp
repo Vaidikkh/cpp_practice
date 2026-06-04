@@ -341,7 +341,7 @@ int main() {
     cout<<"3.743 rounded to :"<<std::round(3.743)<<endl;
     cout<<"4.3 rounded to :"<<std::round(4.3)<<endl;
 */
-    short int var1{10};
+/*    short int var1{10};
     short int var2{20};
     char var3{40};
     char var4{50};
@@ -353,7 +353,7 @@ int main() {
     auto result2= var3 +var4;
     cout<<"size of result1:"<<sizeof(result1)<<endl;
     cout<<"size of result2:"<<sizeof(result2)<<endl;
-    
+*/
     
 
     return 0;
