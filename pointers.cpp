@@ -283,27 +283,43 @@ int main(int argc , char **argv) {
     // Memory with int{54}   leaked
     */
     //Dynamic Array
-    size_t size {10};
+/*    size_t size {10};
 
     double *p_salaries {new double [size]};
     int *p_students {new(std::nothrow) int [size]{}};
     double *p_score { new (std::nothrow) double[size]{1,2,3,4,5}};
     
     if(p_score) {
+        cout<<"size of scores (its already pointer):"<<sizeof(p_score)<<endl;
+        cout<<"Successfully allocated memory for scores"<<endl;
+
         for (size_t i{}; i<size;++i){
             cout<<"value:"<<p_score[i]<<":"<<*(p_score +i)<<endl;
         }
     }
     delete[] p_score;
+    p_score=nullptr;
     delete[] p_students;
+    p_students = nullptr;
     delete[] p_salaries;
-
-    double *temperatures = new double[size] {10.0,20.0,30.0,40.0,50.0,60.0,};
- 
-    for (double temp :temperatures) {
-        cout<<"tempratures"<<temp<<endl;
+    p_salaries=nullptr;
+    //static array vs dynamic array
+    cout<<"==================================================="<<endl;
+    int scoress[10]  {10.0,20.0,30.0,40.0,50.0,60.0,};
+    cout<<"size :"<<sizeof(scoress)<<endl;
+    for (auto s :scoress){
+        cout<<"value:"<<s<<endl;
     }
-    
+    int *p_scores = new int [10] {10.0,20.0,30.0,40.0,50.0,60.0,};
+    cout<<"p_score size :"<<sizeof(p_scores)<<endl;
+
+
+    double *temperatures = new double[size] {10.0,20.0,30.0,40.0,50.0,60.0};
+    //here temp is not an array its a pointer so its gonna give the error
+    /*for (double temp :temperatures) {
+        cout<<"tempratures"<<temp<<endl;
+    }*/
+ 
       
     
     
